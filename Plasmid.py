@@ -11,6 +11,11 @@ while j <= z:
     h.append(g)
 c = []
 d = []
+w = h[0]
+try: 
+  i = h[1]
+except:
+  print "calculating"
 for b in h[0]:
   for a in h[0]:
       if a + b == x:
@@ -23,16 +28,16 @@ for l in h[0]:
           d.append(q)
 c.append(k[2:])
 try:
-  for r in h[1]:
-    for e in h[1]:
-        if r + e == max(g[0]):
+  for r in i[1]:
+    for e in i[1]:
+        if r + e == max(w[0]):
             c.append(r)
             c.append(e)
 except:
   print "no other enzyme used"
 def First_Map_Slice():
-    f = x - max(g[0])
-    s = max(g[0])
+    f = x - max(w[0])
+    s = max(w[0])
     m = []
     m.append(f)
     m.append(s)
@@ -41,7 +46,7 @@ def First_Map_Finish():
     if y == 0:
        return str(k[1:])
 def Second_Map_Slice():
-    return c
+    return str(c)
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
@@ -52,8 +57,9 @@ def Plasmid_Generator():
      web_page.write(First_Map_Slice())
      web_page.write("Then on one side, slice it into: \n")
      web_page.write(First_Map_Finish())
-     web_page.write("Then on the other: \n")
-     web_page.write(Second_Map_Slice())
+     if z > 1:
+         web_page.write("Then on the other: \n")
+         web_page.write(Second_Map_Slice())
      web_page.write("</p>\n</body>\n</html>\n")
      
 Plasmid_Generator()
