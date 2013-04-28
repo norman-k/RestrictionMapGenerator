@@ -4,9 +4,17 @@ z = input("How many more enzymes are there?: ")
 h = []
 j = 1
 while j <= z:
-    k = input("Enter the size in kb of each fragment, within a list: ")
+    k = input("Enter the size in kb of each fragment, denote a ',' for each one: ")
     j += 1
-    h.append(x) 
+    g = []
+    g.append(x)
+    h.append(g)
+c = []
+    for b in c:
+        for a in c:
+            if a + b == x:
+               c.append(a)
+               c.append(b)
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
