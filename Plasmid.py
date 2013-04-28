@@ -27,14 +27,7 @@ for l in h[0]:
           d.append(l)
           d.append(q)
 c.append(k[2:])
-try:
-  for r in i[0]:
-    for e in i[0]:
-        if r + e == max(w[0]):
-            c.append(r)
-            c.append(e)
-except:
-  print "no other enzyme used"
+
 def First_Map_Slice():
     f = x - max(w[0])
     s = max(w[0])
@@ -46,7 +39,10 @@ def First_Map_Finish():
     if y == 0:
        return str(k[1:])
 def Second_Map_Slice():
-    return str(c[(len(c) - 2):len(c)])
+    if len(k) == 4:
+      return str(c[(len(c) - 2):len(c)])
+    else:
+       return str(c[len(c)])
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
