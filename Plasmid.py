@@ -28,8 +28,8 @@ for l in h[0]:
           d.append(q)
 c.append(k[2:])
 try:
-  for r in i[1]:
-    for e in i[1]:
+  for r in i[0]:
+    for e in i[0]:
         if r + e == max(w[0]):
             c.append(r)
             c.append(e)
@@ -46,7 +46,7 @@ def First_Map_Finish():
     if y == 0:
        return str(k[1:])
 def Second_Map_Slice():
-    return str(c)
+    return str(c[(len(c) - 2):len(c)])
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
