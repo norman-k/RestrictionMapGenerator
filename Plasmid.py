@@ -11,13 +11,13 @@ while j <= z:
     h.append(g)
 c = []
 d = []
-for b in k:
-  for a in k:
+for b in k[0:4]:
+  for a in k[0:4]:
       if a + b == x:
         c.append(a)
         c.append(b)
-for l in k:
-    for q in k:
+for l in k[0:4]:
+    for q in k[0:4]:
         if l + q == y:
           d.append(l)
           d.append(q)
