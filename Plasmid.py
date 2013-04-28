@@ -1,3 +1,4 @@
+print "Open 'Plasmid.html' when you're done"
 x = input("Please enter the length of the vector in kb for the initial restriction enzyme: ")
 y = input("Please enter the length of the insert in kb[Enter 0 if there is none]: ")
 z = input("How many more enzymes are there?: ")
