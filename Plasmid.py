@@ -42,7 +42,7 @@ def Second_Map_Slice():
     if len(k) == 4:
       return str(c[(len(c) - 2):len(c)])
     else:
-       return str(c[len(c)])
+       return str(c[len(c) - 1])
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
