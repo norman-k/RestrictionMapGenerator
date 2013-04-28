@@ -11,17 +11,25 @@ while j <= z:
     h.append(g)
 c = []
 d = []
-for b in k[0:4]:
-  for a in k[0:4]:
+for b in h[0]:
+  for a in h[0]:
       if a + b == x:
         c.append(a)
         c.append(b)
-for l in k[0:4]:
-    for q in k[0:4]:
+for l in h[0]:
+    for q in h[0]:
         if l + q == y:
           d.append(l)
           d.append(q)
-c.append(k[2:])        
+c.append(k[2:])
+try:
+  for r in h[1]:
+    for e in h[1]:
+        if r + e == x:
+            c.append(r)
+            c.append(e)
+except:
+  print "no other enzyme used"
 def First_Map_Slice():
     f = x - max(k)
     s = max(k)
