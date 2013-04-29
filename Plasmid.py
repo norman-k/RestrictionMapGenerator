@@ -1,3 +1,5 @@
+import os
+
 print "Open 'Plasmid.html' when you're done"
 x = input("Please enter the length of the vector in kb for the initial restriction enzyme: ")
 y = input("Please enter the length of the insert in kb[Enter 0 if there is none]: ")
@@ -60,3 +62,8 @@ def Plasmid_Generator():
      web_page.write("</p>\n</body>\n</html>\n")
      
 Plasmid_Generator()
+
+try:
+    os.startfile("Plasmid.html")
+except:
+    print "Open 'Plasmid.html'"
