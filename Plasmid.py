@@ -21,7 +21,7 @@ with open("Data.csv","r") as database:
 fragment_list = []
 count_all = 1
 while count_all <= enzyme_count:
-    fragment_size = vector_length #fix
+    fragment_size = data[3] #fix to reflect integer extraction
     count_all += 1
     fragment_carrier = []
     fragment_carrier.append(fragment_size)
