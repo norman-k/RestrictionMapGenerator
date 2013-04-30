@@ -1,51 +1,51 @@
 import os
 
 print "Open 'Plasmid.html' when you're done"
-x = input("Please enter the length of the vector in kb for the initial restriction enzyme: ")
-y = input("Please enter the length of the insert in kb[Enter 0 if there is none]: ")
-z = input("How many more enzymes are there?: ")
-h = []
-j = 1
-while j <= z:
-    k = input("Enter the size in kb of each fragment, denote a ',' for each one: ")
-    j += 1
-    g = []
-    g.append(k)
-    h.append(g)
-c = []
-d = []
-w = h[0]
+vector_length = input("Please enter the length of the vector in kb for the initial restriction enzyme: ")
+insert_length = input("Please enter the length of the insert in kb[Enter 0 if there is none]: ")
+enzyme_count = input("How many more enzymes are there?: ")
+fragment_list = []
+count_all = 1
+while count_all <= enzyme_count:
+    fragment_size = input("Enter the size in kb of each fragment, denote a ',' for each one: ")
+    count_all += 1
+    fragment_carrier = []
+    fragment_carrier.append(fragment_size)
+    fragment_list.append(fragment_carrier)
+vector_fragments = []
+insert_fragments = []
+initial_fragments = fragment_list[0]
 try: 
-  i = h[1]
+  second_fragments = fragment_list[1]
 except:
   print "calculating"
-for b in h[0]:
-  for a in h[0]:
-      if a + b == x:
-        c.append(a)
-        c.append(b)
-for l in h[0]:
-    for q in h[0]:
-        if l + q == y:
-          d.append(l)
-          d.append(q)
-c.append(k[2:])
+for fragment_one in fragment_list[0]:
+  for fragment_two in fragment_list[0]:
+      if fragment_one + fragment_two == vector_length:
+        insert_fragments.append(fragment_one)
+        insert_fragments.append(fragment_two)
+for insert_one in fragment_list[0]:
+    for insert_two in fragment_list[0]:
+        if insert_one + insert_two == insert_length:
+          insert_fragments.append(insert_one)
+          insert_fragments.append(insert_two)
+vector_fragments.append(fragment_size[2:])
 
 def First_Map_Slice():
-    f = x - max(w[0])
-    s = max(w[0])
-    m = []
-    m.append(f)
-    m.append(s)
-    return str(m)
+    gap_left = vector_length - max(initial_fragments[0])
+    initial_slice = max(initial_fragments[0])
+    first_map = []
+    first_map.append(gap_left)
+    first_map.append(initial_slice)
+    return str(first_map)
 def First_Map_Finish():
-    if y == 0:
-       return str(k[1:])
+    if insert_length == 0:
+       return str(fragment_size[1:])
 def Second_Map_Slice():
-    if len(k) == 4:
-      return str(c[(len(c) - 2):len(c)])
+    if len(fragment_size) == 4:
+      return str(vector_fragments[(len(vector_fragments) - 2):len(vector_fragments)])
     else:
-       return str(c[len(c) - 1])
+       return str(vector_fragments[len(vector_fragments) - 1])
 def Plasmid_Generator():
  with open("Plasmid.html","w",) as web_page:
      web_page.write("<!doctype html>\n<html>\n<head>\n")
@@ -56,7 +56,7 @@ def Plasmid_Generator():
      web_page.write(First_Map_Slice())
      web_page.write("Then on one side, slice it into: \n")
      web_page.write(First_Map_Finish())
-     if z > 1:
+     if enzyme_count > 1:
          web_page.write("Then on the other: \n")
          web_page.write(Second_Map_Slice())
      web_page.write("</p>\n</body>\n</html>\n")
