@@ -1,24 +1,13 @@
 import os
-import csv
 
-
-with open("Data.csv","r") as database:
-    read_file = csv.reader(open("Data.csv", "rb"), skipinitialspace=True)
-    data = database.readlines()
-    data = map(lambda quote: quote.strip('\n'), data)
-    name = []        
-    index = 1
-    vector = []
-    for length in data:
-        vector.append(int(data[index]))
-    vector_length = sum(vector)
-    for length in data:
-        enzyme_length = data[1]
-    enzyme_count = 2 #fix
+print "Open 'Plasmid.html' when you're done"
+vector_length = input("Please enter the length of the vector in kb for the initial restriction enzyme: ")
+insert_length = input("Please enter the length of the insert in kb[Enter 0 if there is none]: ")
+enzyme_count = input("How many more enzymes are there?: ")
 fragment_list = []
 count_all = 1
 while count_all <= enzyme_count:
-    fragment_size = vector_length #fix
+    fragment_size = input("Enter the size in kb of each fragment, denote a ',' for each one: ")
     count_all += 1
     fragment_carrier = []
     fragment_carrier.append(fragment_size)
