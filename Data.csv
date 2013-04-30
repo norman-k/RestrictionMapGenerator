@@ -1,3 +1,4 @@
-hello
-52
-hello
+,Restriction Enzyme(s),Base pair length (in kb),,,
+Enter vector length here,EcoRI,52,,,
+,BamH1,26,12,8,6
+,EcoRI & BamH1,14,12,8,6
