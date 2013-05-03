@@ -6,20 +6,26 @@ with open("Data.csv","r") as database:
     data = str(database.readlines()).strip().split('\\n')
     data = [x.split(",") for x in data]
     name = []        
-    index = 0
+    index = 2
     vector = []
-    for length in data:
-        vector.append(int(data[1][3]))
+    insert = []
+    vector.append(int(data[1][3]))
     vector_length = sum(vector)
-    if data[0][23] != '':
+    if data[1][4] != '':
+        insert.append(int(data[1][4]))
+        if data[1][5] != '':
+            insert.append(int(data[1][5]))    
+    insert_length = sum(insert)    
+    if data[3][2] != '':
         enzyme_count = 2
     else:
         enzyme_count = 1
 fragment_list = []
 count_all = 1
 while count_all <= enzyme_count:
-    fragment_size = [data[0][14],data[0][15],data[0][16]] 
+    fragment_size = [int(data[index][3]),int(data[index][4]),int(data[index][5]),int(data[index][6])]
     count_all += 1
+    index += 1
     fragment_carrier = []
     fragment_carrier.append(fragment_size)
     fragment_list.append(fragment_carrier)

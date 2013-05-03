@@ -22,8 +22,8 @@ except:
 for fragment_one in fragment_list[0]:
   for fragment_two in fragment_list[0]:
       if fragment_one + fragment_two == vector_length:
-        insert_fragments.append(fragment_one)
-        insert_fragments.append(fragment_two)
+        vector_fragments.append(fragment_one)
+        vector_fragments.append(fragment_two)
 for insert_one in fragment_list[0]:
     for insert_two in fragment_list[0]:
         if insert_one + insert_two == insert_length:
