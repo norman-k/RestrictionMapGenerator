@@ -3,25 +3,22 @@ import csv
 
 with open("Data.csv","r") as database:
     read_file = csv.reader(open("Data.csv", "rb"), skipinitialspace=True)
-    data = database.readlines()
-    data = map(lambda quote: quote.strip('\n'), data)
-    print data
+    data = str(database.readlines()).strip().split('\\n')
+    data = [x.split(",") for x in data]
     name = []        
-    index = 1
+    index = 0
     vector = []
     for length in data:
-        vector.append(int(data[index]))
+        vector.append(int(int(data[0][8] + int(data[0][9]) + int(data[0][10]))))
     vector_length = sum(vector)
-    for length in data:
-        enzyme_length = data[1]
-    if len(data) == 4:
+    if data[0][23] != '':
         enzyme_count = 2
     else:
         enzyme_count = 1
 fragment_list = []
 count_all = 1
 while count_all <= enzyme_count:
-    fragment_size = data[3] #fix to reflect integer extraction
+    fragment_size = [data[0][14],data[0][15],data[0][16]] 
     count_all += 1
     fragment_carrier = []
     fragment_carrier.append(fragment_size)
