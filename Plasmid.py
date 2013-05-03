@@ -9,7 +9,7 @@ with open("Data.csv","r") as database:
     index = 0
     vector = []
     for length in data:
-        vector.append(int(int(data[0][8] + int(data[0][9]) + int(data[0][10]))))
+        vector.append(int(data[1][3]))
     vector_length = sum(vector)
     if data[0][23] != '':
         enzyme_count = 2
